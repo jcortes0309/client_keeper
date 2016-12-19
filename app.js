@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.get("/clients", function(request, response) {
   console.log("Request for clients received");
 
-  db.clients.find(function(error, docs) {
+  db.clients.find().sort({first_name: 1}, function(error, docs) {
     if (error) {
       response.send(error);
     } else {
@@ -24,6 +24,17 @@ app.get("/clients", function(request, response) {
   });
 });
 
+app.post("/clients", function(request, response) {
+  db.clients.insert(request.body, function(error, doc) {
+    if (error) {
+      response.send(error);
+    } else {
+      console.log("Client added...");
+      console.log(doc);
+      response.json(doc);
+    }
+  });
+});
 
 
 app.listen(3000);

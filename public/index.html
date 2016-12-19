@@ -35,11 +35,11 @@
         </thead>
         <tbody>
           <tr>
-            <td><input type="text" class="form-control" name="first_name" value=""></td>
-            <td><input type="text" class="form-control" name="last_name" value=""></td>
-            <td><input type="text" class="form-control" name="email" value=""></td>
-            <td><input type="text" class="form-control" name="phone" value=""></td>
-            <td><button id="addBtn" class="btn btn-primary">Add</button></td>
+            <td><input type="text" class="form-control" ng-model="client.first_name" name="first_name" value=""></td>
+            <td><input type="text" class="form-control" ng-model="client.last_name" name="last_name" value=""></td>
+            <td><input type="text" class="form-control" ng-model="client.email" name="email" value=""></td>
+            <td><input type="text" class="form-control" ng-model="client.phone" name="phone" value=""></td>
+            <td><button id="addBtn" class="btn btn-primary" ng-click="addClient()">Add</button></td>
           </tr>
           <tr ng-repeat="client in clients">
             <td>{{ client.first_name }}</td>
