@@ -1,0 +1,22 @@
+{
+  "name": "clientkeeper",
+  "authors": [
+    "Juan A Cortes"
+  ],
+  "description": "Client management app",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.0",
+    "bootstrap": "^3.3.7"
+  }
+}

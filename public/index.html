@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <title>Client keeper application</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
   </head>
-  <body>
+  <body ng-controller="AppController">
     <nav class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
@@ -41,11 +41,11 @@
             <td><input type="text" class="form-control" name="phone" value=""></td>
             <td><button id="addBtn" class="btn btn-primary">Add</button></td>
           </tr>
-          <tr>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>jt@fat.com</td>
-            <td>978-555-5555</td>
+          <tr ng-repeat="client in clients">
+            <td>{{ client.first_name }}</td>
+            <td>{{ client.last_name }}</td>
+            <td>{{ client.email }}</td>
+            <td>{{ client.phone }}</td>
             <td><button class="btn btn-warning">Edit</button> <button class="btn btn-danger">Delete</button></td>
           </tr>
         </tbody>
@@ -55,5 +55,6 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/controllers/AppController.js"></script>
   </body>
 </html>
